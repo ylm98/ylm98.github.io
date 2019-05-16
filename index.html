@@ -336,6 +336,151 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://mingzz.top/2019/2019-05-17 一键安装-WordPress-脚本.html">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="MingzZ">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="MingzZ">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2019/2019-05-17 一键安装-WordPress-脚本.html" class="post-title-link" itemprop="url">一键安装 WordPress 脚本</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-05-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-05-17T00:00:00+08:00">2019-05-17</time>
+            
+
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>突然想起我还有个博客，不知道说什么就<del>给大家鞠个躬吧</del>发点新手向教程吧</p>
+<p>前段时间尝试性地写了一些服务器脚本</p>
+<p>比如以下这个，上传到服务器再运行就能安装上 WordPress</p>
+<p>其实直接复制也一样</p>
+<p><code>wordpress.sh</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># install service</span></span><br><span class="line">yum -y install httpd mariadb-server mariadb php php-mysql gd php-gd</span><br><span class="line"></span><br><span class="line"><span class="comment"># start service</span></span><br><span class="line">systemctl start httpd mariadb</span><br><span class="line">systemctl <span class="built_in">enable</span> httpd mariadb</span><br><span class="line"></span><br><span class="line"><span class="comment"># database</span></span><br><span class="line">mysql_pw=root</span><br><span class="line">mysqladmin -uroot password <span class="string">"<span class="variable">$mysql_pw</span>"</span></span><br><span class="line">mysql -uroot -p<span class="string">"<span class="variable">$mysql_pw</span>"</span> -e<span class="string">"drop database wordpress"</span></span><br><span class="line">mysql -uroot -p<span class="string">"<span class="variable">$mysql_pw</span>"</span> -e<span class="string">"create database wordpress"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># wordpress</span></span><br><span class="line">wget https://cn.wordpress.org/wordpress-4.9.4-zh_CN.tar.gz</span><br><span class="line">tar xf wordpress-4.9.4-zh_CN.tar.gz</span><br><span class="line">rm -rf /var/www/html</span><br><span class="line">mkdir /var/www/html</span><br><span class="line">cp -rf wordpress/* /var/www/html</span><br><span class="line">chown -R apache.apache /var/www/html</span><br></pre></td></tr></table></figure>
+<p><em>yum 适用于 RedHat 系 Linux 系统，如果服务器是 Debian 则换成 apt-get</em></p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://mingzz.top/2019/2019-02-14 Hexo-使用指南.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -356,7 +501,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 
-                <a href="/2019/2019-02-14 Hexo-使用指南.html" class="post-title-link" itemprop="url">Hexo　使用指南</a>
+                <a href="/2019/2019-02-14 Hexo-使用指南.html" class="post-title-link" itemprop="url">Hexo 使用指南</a>
               
             
           </h1>
@@ -802,7 +947,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
